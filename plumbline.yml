@@ -1,0 +1,13 @@
+version: 1
+modules:
+  api: ["src/api/**"]
+  orgs: ["src/orgs/**"]
+  db: ["src/db/**"]
+layers:
+  - [api]
+  - [orgs]
+  - [db]
+rules:
+  - id: no-db-to-api
+    forbid: db -> api
+    because: "ADR-003: storage knows nothing about HTTP"
