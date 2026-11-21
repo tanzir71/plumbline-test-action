@@ -11,3 +11,6 @@ rules:
   - id: no-db-to-api
     forbid: db -> api
     because: "ADR-003: storage knows nothing about HTTP"
+gate:
+  - branches: ["main"]
+    min_merge_score: 5

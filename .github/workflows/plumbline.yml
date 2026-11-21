@@ -1,0 +1,17 @@
+name: Plumbline
+on:
+  pull_request:
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+  security-events: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: tanzir71/plumbline@v1
